@@ -1,0 +1,8 @@
+[Bb]in/
+[Oo]bj/
+*.suo
+*.user
+/TestResults
+*.vspscc
+*.vssscc
+_Resharper*
