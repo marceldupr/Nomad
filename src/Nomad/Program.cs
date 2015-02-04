@@ -9,7 +9,7 @@ namespace Nomad
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static int Main(string[] args)
         {
             var logger = new ConsoleLogger();
             try
@@ -28,7 +28,10 @@ namespace Nomad
             {
                 logger.WriteToLog("An error occurred while trying to migrate. \nUsage: Nomad ':assemblyfile' [:connectionstring]\nNomad ':assemblyfile' ':server' ':db' [':user' ':password']");
                 logger.WriteToLog("Error Details: {0}", ex);
+                return -1;
             }
+
+            return 0;
         }
 
         private static IDatabase CreateDatabaseFromArgs(string[] args, ConsoleLogger logger)
