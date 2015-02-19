@@ -38,3 +38,19 @@ PM> Install-Package Nomad
 **Execute from Powershell**
 
 		& "Migrations\Nomad.exe" Migrations\Migrations.dll ${database.server} ${database.name} ${database.useradmin} ${database.passwordadmin}
+
+### Packaging
+At the command line, navigate to src/Nomad and run:
+
+    nuget spec Nomad.csproj
+Check the generated .nuspec file looks OK, then run this to create the package:
+
+    nuget pack Nomad.csproj –Prop Configuration=Release –IncludeReferencedProjects
+
+If not done already, set NuGet API key:
+
+    nuget setApiKey xxxx-xxxx-xxxx-xxxx
+
+Then push to nuget.org as follows:
+
+    nuget push
