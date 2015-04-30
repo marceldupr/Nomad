@@ -19,7 +19,7 @@ namespace Nomad.Migrations
                 .ToList();
         }
 
-        private static int GetVersion(Type x)
+        private static long GetVersion(Type x)
         {
             var attribute = x.GetCustomAttributes(typeof(MigrationAttribute), true)
                                 .FirstOrDefault() as MigrationAttribute;

@@ -40,7 +40,7 @@ namespace Nomad.Migrations
             return !string.IsNullOrEmpty(string.Concat(string.Empty, result));
         }
 
-        public void UpdateSchemaVersionTo(int version)
+        public void UpdateSchemaVersionTo(long version)
         {
             var sqlToExecute = string.Format(Resources.InsertSchemaVersion, version);
             Database.ExecuteNonQuery(sqlToExecute);

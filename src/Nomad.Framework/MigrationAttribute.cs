@@ -4,14 +4,14 @@ namespace Nomad.Framework
 {
     public class MigrationAttribute : Attribute
     {
-        private readonly int version;
+        private readonly long version;
 
-        public MigrationAttribute(int version)
+        public MigrationAttribute(long version)
         {
             this.version = version;
         }
 
-        public int Version
+        public long Version
         {
             get { return version; }
         }
