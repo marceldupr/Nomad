@@ -7,7 +7,7 @@ namespace Nomad.Migrations
         IDatabase Database { get; }
         bool SchemaTableCountIsZero { get; }
         int GetLatestSchemaVersion();
-        void UpdateSchemaVersionTo(int version);
+        void UpdateSchemaVersionTo(long version);
         void EnsureSchemaVersionTable();
         void CreateSchemaVersionTable();
     }
